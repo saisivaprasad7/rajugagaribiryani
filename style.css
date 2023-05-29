@@ -1,115 +1,124 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #121111;
-    background-image: url("plate-food-with-lemon-lemon.jpg");
-    background-size: cover;
+  font-family: Arial, sans-serif;
+  background-color: #121111;
+  background-image: url("plate-food-with-lemon-lemon.jpg");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    color: transparent;
-    background-image: url("fxTQ.gif");
-    background-clip: text;
-   -moz-background-clip:text;
-   -webkit-background-clip:text;
-   font-size: 50px;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  h2 {
-    color: transparent;
-    background-image: url("fxTQ.gif");
-    background-clip: text;
-   -moz-background-clip: text;
-   -webkit-background-clip: text;
-    margin-top: 40px;
-  }
-  
-  .menu-section {
-    margin-bottom: 40px;
-  }
-  
-  .menu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #ffd700;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-  
-  .menu-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .menu-item .item-name {
-    font-weight: bold;
-    color: #333;
-    flex: 1;
-  }
-  
-  .menu-item .item-price {
-    color: #777;
-    margin-left: 20px;
-  }
-
-
-    .social-icons {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-    }
-    
-    .social-icons li {
-      margin-right: 10px;
-    }
-    
-    .social-icons li:last-child {
-      margin-right: 0;
-    }
-    
-    .social-icons a {
-      display: inline-block;
-      color: #333;
-      text-decoration: none;
-      font-size: 20px;
-      transition: color 0.3s;
-    }
-    
-    .social-icons a:hover {
-      color: #ff5a5f;
-    }
-
-    #cart-list{
-      font-weight: bold;
-    }
-
-button{
-  width: auto;
-  color: forestgreen;
-  
+  margin: 0;
+  padding: 0;
 }
 
-  #total-amount {
-    font-size: 24px;
-    font-weight: bold;
-    background-color: green;
-    margin-top: 10px;
-    text-align: right;
-  }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
+h1 {
+  color: #fff;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+  animation: glowText 2s infinite;
+}
+
+@keyframes glowText {
+  0% { color: #fff; text-shadow: 0 0 10px #fff; }
+  50% { color: #ffd700; text-shadow: 0 0 20px #ffd700; }
+  100% { color: #fff; text-shadow: 0 0 10px #fff; }
+}
+
+h2 {
+  color: #ffd700;
+  margin-top: 40px;
+}
+
+.menu-section {
+  margin-bottom: 40px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffd700;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item .item-name {
+  font-weight: bold;
+  color: #333;
+  flex: 1;
+}
+
+.menu-item .item-price {
+  color: #777;
+  margin-left: 20px;
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.social-icons li {
+  margin-right: 10px;
+}
+
+.social-icons li:last-child {
+  margin-right: 0;
+}
+
+.social-icons a {
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff5a5f;
+}
+
+#cart-list {
+  font-weight: bold;
+}
+
+button {
+  width: auto;
+  color: #ffd700;
+  background-color: transparent;
+  border: 2px solid #ffd700;
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffd700;
+  color: #121111;
+}
+
+#total-amount {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+  color: #ffd700;
+}
