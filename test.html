@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rajugari Biryani Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Rajugari Biryani Menu</h1>
+    <!-- Menu section price and item details for Starters -->
+    <div class="menu-section">
+      <h2>Starters</h2>
+      <div class="menu-item">
+        <img src="image.jpg.jpg" alt="Chicken 65 Dry" style="width: 50px; height: 50px;">
+        <div class="item-name">Chicken 65 Dry</div>
+        <div class="item-price">99/-</div>
+        <div class="quantity-section">
+          <input type="number" class="quantity-input" value="1">
+          <button class="add-to-cart-btn" onclick="addToCart('Chicken 65 Dry', 99)"><strong>Order</strong></button>
+        </div>
+      </div>
+      <!-- Rest of the starters menu items -->
+    </div>
+    <!-- Rest of the HTML code -->
+
+    <!-- All cart items will be added here -->
+    <div id="cart-items">
+      <h2>YOUR ORDER </h2>
+      <ul id="cart-list"></ul>
+      <div id="total-amount"></div>
+    </div>
+
+    <!-- All Social media platforms added here -->
+    <ul class="social-icons">
+      <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href="https://twitter.com/login"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="https://in.linkedin.com/"><i class="fab fa-linkedin-in"></i></a></li>
+      <li><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a></li>
+      <li><a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a></li>
+    </ul>
+
+    <script>
+      function addToCart(itemName, itemPrice) {
+        var quantityInput = document.querySelector('.quantity-input');
+        var quantity = quantityInput.value;
+
+        // Create a new list item for the cart
+        var listItem = document.createElement('li');
+        listItem.innerText = itemName + ' - ' + itemPrice + '/- x ' + quantity;
+        
+        // Append the list item to the cart list
+        var cartList = document.getElementById('cart-list');
+        cartList.appendChild(listItem);
+        
+        // Calculate the total bill amount
+        var totalAmount = document.getElementById('total-amount');
+        var currentTotal = parseFloat(totalAmount.innerText) || 0;
+        var itemTotal = itemPrice * quantity;
+        var newTotal = currentTotal + itemTotal;
+        totalAmount.innerText = newTotal.toFixed(2);
+        
+        // Reset the quantity input
+        quantityInput.value = 1;
+      }
+    </script>
+  </div>
+</body>
+</html>
